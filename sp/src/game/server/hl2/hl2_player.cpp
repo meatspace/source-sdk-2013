@@ -258,6 +258,8 @@ public:
 	void InputSuppressCrosshair( inputdata_t &inputdata );
 #endif // PORTAL2
 #ifdef MAPBASE
+	void InputSuppressCrosshair(inputdata_t& inputdata);
+
 	void InputRequestPlayerArmor( inputdata_t &inputdata );
 	void InputRequestPlayerAuxPower( inputdata_t &inputdata );
 	void InputRequestPlayerFlashBattery( inputdata_t &inputdata );
@@ -4805,6 +4807,7 @@ BEGIN_DATADESC( CLogicPlayerProxy )
 	DEFINE_INPUTFUNC( FIELD_VOID,	"SuppressCrosshair", InputSuppressCrosshair ),
 #endif // PORTAL
 #ifdef MAPBASE
+	DEFINE_INPUTFUNC(FIELD_VOID, "SuppressCrosshair", InputSuppressCrosshair),
 	DEFINE_INPUTFUNC( FIELD_VOID,	"RequestPlayerArmor",	InputRequestPlayerArmor ),
 	DEFINE_INPUTFUNC( FIELD_VOID,	"RequestPlayerAuxPower",		InputRequestPlayerAuxPower ),
 	DEFINE_INPUTFUNC( FIELD_VOID,	"RequestPlayerFlashBattery",		InputRequestPlayerFlashBattery ),
@@ -5233,6 +5236,16 @@ void CLogicPlayerProxy::InputSuppressCrosshair( inputdata_t &inputdata )
 #endif // PORTAL
 
 #ifdef MAPBASE
+
+void CLogicPlayerProxy::InputSuppressCrosshair(inputdata_t& inputdata)
+{
+	if (m_hPlayer == NULL)
+		return;
+
+	CBasePlayer* pPlayer = ToBasePlayer(m_hPlayer.Get());
+	pPlayer->m_Local.m_iHideHUD |= HIDEHUD_CROSSHAIR;
+}
+
 void CLogicPlayerProxy::InputSetHandModel( inputdata_t &inputdata )
 {
 	if (!m_hPlayer)
