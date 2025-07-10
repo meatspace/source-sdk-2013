@@ -366,9 +366,11 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 		// Go through thin material types
 		if (FClassnameIs(pOther, "func_breakable") || FClassnameIs(pOther, "func_breakable_surf"))
 		{
-			CBreakable* pOtherEntity = static_cast<CBreakable*> (pOther);
+			CBreakable* pOtherEntity = static_cast<CBreakable*>(pOther);
 			if ((pOtherEntity->GetMaterialType() == matGlass) || (pOtherEntity->GetMaterialType() == matWeb))
+			{
 				return;
+			}
 		}
 
 		if ( !pOther->IsAlive() )
