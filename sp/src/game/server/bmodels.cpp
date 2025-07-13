@@ -254,7 +254,9 @@ void CFuncVehicleClip::InputDisable( inputdata_t &data )
 
 #define SF_CONVEYOR_VISUAL		0x0001
 #define SF_CONVEYOR_NOTSOLID	0x0002
+#ifdef MAPBASE
 #define SF_CONVEYOR_START_DISABLED 0x0003
+#endif // MAPBASE
 
 class CFuncConveyor : public CFuncWall
 {
@@ -321,7 +323,9 @@ void CFuncConveyor::Spawn( void )
 		AddSolidFlags( FSOLID_NOT_SOLID );
 	}
 
+	#ifdef MAPBASE
 	if (!HasSpawnFlags(SF_CONVEYOR_VISUAL))
+	#endif // MAPBASE
 	{
 		if (m_flSpeed == 0)
 		{
