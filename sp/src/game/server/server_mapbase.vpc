@@ -94,6 +94,12 @@ $Project
 			$File	"mapbase\vgui_text_display.cpp"
 			$File	"mapbase\weapon_custom_hl2.cpp"
 			
+			$File	"$SRCDIR\game\server\mapbase\npc_bullsquid.cpp" //added by vizzys
+			$File	"$SRCDIR\game\server\mapbase\npc_bullsquid.h" //added by vizzys
+			$File	"$SRCDIR\game\server\mapbase\npc_cockroach.cpp" //added by vizzys
+			$File	"$SRCDIR\game\server\mapbase\npc_houndeye.cpp" //added by vizzys
+			$File	"$SRCDIR\game\server\mapbase\npc_houndeye.h" //added by vizzys
+			
 			$File	"mapbase\logic_eventlistener.cpp"
 			$File	"mapbase\logic_register_activator.cpp"
 		}

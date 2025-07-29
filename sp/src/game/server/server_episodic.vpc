@@ -266,7 +266,8 @@ $Project "Server (Episodic)"
 			$File	"episodic\weapon_striderbuster.h"
 			$File	"hl2\weapon_stunstick.cpp" [!$MAPBASE] // See server_mapbase.vpc
 			$File	"hl2\weapon_stunstick.h" [!$MAPBASE] // See server_mapbase.vpc
-			$File	"hl2\npc_spotlight.cpp"
+			$File	"hl2\npc_spotlight.cpp" //added by vizzys	
+			$File	"$SRCDIR\game\server\env_warpball.cpp" //added by vizzys			
 			$File	"episodic\ep1_gamestats.h"
 			$File	"episodic\ep2_gamestats.h"
 			$File	"episodic\ep1_gamestats.cpp" \
